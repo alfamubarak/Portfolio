@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Planner | Mubarak Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+         HEADER / NAVIGATION
+         ============================================================ -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="index.html">
+          <svg class="brand__logo" viewBox="0 0 32 32" aria-hidden="true">
+            <defs>
+              <linearGradient
+                id="brand-gradient"
+                x1="16"
+                y1="2"
+                x2="16"
+                y2="30"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#8266ff"></stop>
+                <stop offset="1" stop-color="#5b39f0"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              d="M16 4.5 28.5 27H3.5Z"
+              fill="url(#brand-gradient)"
+              stroke="url(#brand-gradient)"
+              stroke-width="5"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+          <span class="brand__name">Mubarak</span>
+        </a>
+
+        <!-- Page links. The current page is marked with .is-active. -->
+        <ul class="menu" id="main-menu">
+          <li>
+            <a class="menu__link" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="menu__link" href="about.html">About me</a>
+          </li>
+          <li>
+            <a class="menu__link" href="projects.html">Projects</a>
+          </li>
+          <li>
+            <a
+              class="menu__link is-active"
+              href="academic-planner.html"
+              aria-current="page"
+              >Academic Planner</a
+            >
+          </li>
+          <li>
+            <a class="menu__link" href="contact.html">Contact</a>
+          </li>
+
+          <li class="menu__cta">
+            <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+          </li>
+        </ul>
+
+        <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+
+        <button
+          class="hamburger"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============================================================
+         ACADEMIC PLANNER
+         Summary cards, a task form and a saved task list.
+         ============================================================ -->
+    <main>
+      <section class="planner">
+        <header class="planner__header">
+          <p class="planner__eyebrow">Academic Planner</p>
+          <h1 class="planner__title">Plan your week, one task at a time.</h1>
+          <p class="planner__intro">
+            Keep track of assignments, revision goals, and project milestones.
+            Tick things off as you go your list is saved on this device.
+          </p>
+        </header>
+
+        <div class="planner__stats">
+          <div class="stat">
+            <p class="stat__label">Total Tasks</p>
+            <p class="stat__value" id="count-total">0</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Pending Tasks</p>
+            <p class="stat__value" id="count-pending">0</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Completed Tasks</p>
+            <p class="stat__value" id="count-completed">0</p>
+          </div>
+        </div>
+
+        <div class="planner__board">
+          <form class="task-form" id="task-form" novalidate>
+            <label class="sr-only" for="task-input">New task</label>
+            <input
+              class="task-form__input"
+              id="task-input"
+              type="text"
+              name="task"
+              placeholder="What do you need to get done?"
+              maxlength="120"
+              autocomplete="off"
+            />
+            <button class="btn btn--primary" type="submit">Add Task</button>
+          </form>
+
+          <p class="task-form__error" id="task-error" role="alert" hidden>
+            Please write a task before adding it.
+          </p>
+
+          <ul class="task-list" id="task-list"></ul>
+
+          <p class="task-empty" id="task-empty">
+            No tasks yet — add your first one above.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Delete confirmation -->
+    <dialog
+      class="modal"
+      id="delete-modal"
+      aria-labelledby="delete-modal-title"
+      aria-describedby="delete-modal-text"
+    >
+      <span class="modal__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </span>
+
+      <h2 class="modal__title" id="delete-modal-title">Delete this task?</h2>
+      <p class="modal__text" id="delete-modal-text">
+        “<strong id="delete-modal-task"></strong>” will be removed from your
+        planner. This can't be undone.
+      </p>
+
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" data-modal-close>
+          Keep task
+        </button>
+        <button class="btn btn--danger" type="button" id="confirm-delete">
+          Delete task
+        </button>
+      </div>
+    </dialog>
+
+    <script src="js/main.js"></script>
+    <script src="js/planner.js"></script>
+  </body>
+</html>
