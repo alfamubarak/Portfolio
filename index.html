@@ -1,11 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mubarak Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+         HEADER / NAVIGATION
+         One floating pill with three parts:
+         brand (left) · page links (center) · "Get in Touch" (right)
+         ============================================================ -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <!-- Brand: logo + name -->
+        <a class="brand" href="index.html">
+          <svg class="brand__logo" viewBox="0 0 32 32" aria-hidden="true">
+            <defs>
+              <linearGradient
+                id="brand-gradient"
+                x1="16"
+                y1="2"
+                x2="16"
+                y2="30"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#8266ff"></stop>
+                <stop offset="1" stop-color="#5b39f0"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              d="M16 4.5 28.5 27H3.5Z"
+              fill="url(#brand-gradient)"
+              stroke="url(#brand-gradient)"
+              stroke-width="5"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+          <span class="brand__name">Mubarak</span>
+        </a>
+
+        <!-- Page links. The current page is marked with .is-active. -->
+        <ul class="menu" id="main-menu">
+          <li>
+            <a
+              class="menu__link is-active"
+              href="index.html"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="menu__link" href="about.html">About me</a>
+          </li>
+          <li>
+            <a class="menu__link" href="projects.html">Projects</a>
+          </li>
+          <li>
+            <!-- Replace "#" with academic-planner.html when that page exists -->
+            <a class="menu__link" href="#">Academic Planner</a>
+          </li>
+          <li>
+            <a class="menu__link" href="contact.html">Contact</a>
+          </li>
+
+          <!-- Same button as below, shown only inside the mobile menu -->
+          <li class="menu__cta">
+            <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+          </li>
+        </ul>
+
+        <!-- Primary action (desktop only) -->
+        <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+
+        <!-- Mobile menu toggle -->
+        <button
+          class="hamburger"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============================================================
+         HERO
+         Left: headline, short intro and actions
+         Right: portrait with floating badges and decorative details
+         ============================================================ -->
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Make <span class="hero__title-accent">Designing</span> 
+            Experiences. Building the Future.
+          </h1>
+
+          <p class="hero__text">
+            Hi, I'm Mohammad Mubarak, a Software Engineering student at Miva
+            Open University and a UI/UX Designer passionate about creating
+            intuitive, accessible, and user-centered digital experiences.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="contact.html">Hire Me</a>
+
+            <a class="hero__works" href="projects.html">
+              Previous Works
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 17 17 7M9 7h8v8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portrait and decorations -->
+        <div class="hero__visual">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <div class="hero__ring" aria-hidden="true"></div>
+
+          <div class="hero__dots hero__dots--top" aria-hidden="true"></div>
+          <div class="hero__dots hero__dots--bottom" aria-hidden="true"></div>
+
+          <div class="hero__portrait">
+            <img src="images/Mubarak.png" alt="Portrait of Mubarak" />
+          </div>
+
+          <div class="floating-badge floating-badge--code" aria-hidden="true">
+            <img src="icons/code-icon.svg" alt="" width="30" height="25" />
+          </div>
+
+          <div class="floating-badge floating-badge--study" aria-hidden="true">
+            <img
+              src="icons/graduation-cap-icon.svg"
+              alt=""
+              width="30"
+              height="18"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
