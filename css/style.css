@@ -1394,6 +1394,21 @@ textarea.field__input {
     transform: translateY(-2px);
 }
 
+/* The GitHub icon file, drawn as a mask so it follows the surrounding text color. */
+.github-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: currentColor;
+    -webkit-mask: url("../icons/github-icon.svg") center / contain no-repeat;
+    mask: url("../icons/github-icon.svg") center / contain no-repeat;
+}
+
+.footer__social .github-icon {
+    width: 18px;
+    height: 18px;
+}
+
 
 /* ==========================================================================
    18. Contact page — responsive layout
