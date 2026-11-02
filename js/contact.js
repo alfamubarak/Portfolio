@@ -1,7 +1,7 @@
 /**
  * Contact form
  * ---------------------------------------------------------------------------
- * Front-end validation only — no message is sent anywhere.
+ * Front-end validation only  no message is sent anywhere.
  */
 
 const form = document.getElementById("contact-form");
