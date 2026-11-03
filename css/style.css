@@ -626,7 +626,7 @@ a {
 .about {
     max-width: 1360px;
     margin: 0 auto;
-    padding: 0 32px 96px;
+    padding: 0 32px 64px;
     scroll-margin-top: 120px; /* keeps the heading clear of the sticky navbar */
 }
 
@@ -737,7 +737,7 @@ a {
    ========================================================================== */
 @media (max-width: 960px) {
     .about {
-        padding: 0 16px 64px;
+        padding: 0 16px 48px;
     }
 
     .about__inner {
@@ -1740,23 +1740,10 @@ textarea.field__input {
     line-height: 1.7;
 }
 
-.about-goals {
-    padding: 36px;
-    background: var(--surface);
-    border-radius: 32px;
-    box-shadow: 0 18px 40px rgba(40, 28, 90, 0.06);
-}
-
-.about-goals p {
-    max-width: 760px;
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 0.98rem;
-    line-height: 1.8;
-}
-
-.about-goals p + p {
-    margin-top: 16px;
+/* Goals reuses the same two-column card as the story section,
+   so it only needs a couple of small overrides. */
+.about-goals .about__text:last-child {
+    margin-bottom: 0;
 }
 
 .about-cta {
@@ -1820,12 +1807,563 @@ textarea.field__input {
         margin-top: 48px;
     }
 
-    .about-goals {
-        padding: 26px 22px;
-    }
-
     .about-cta {
         padding: 32px 24px;
         border-radius: 28px;
+    }
+}
+
+
+/* ==========================================================================
+   22. What I do (home page)
+   Three white cards that follow the same rounded, soft-shadow
+   surfaces used by the About card.
+   ========================================================================== */
+.what-i-do {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 8px 32px 64px;
+    scroll-margin-top: 120px;
+}
+
+/* The big white container — same surface as the About card */
+.what-i-do__inner {
+    padding: 51px;
+    background: var(--surface);
+    border-radius: 40px;
+    box-shadow: 0 24px 60px rgba(40, 28, 90, 0.08);
+}
+
+.what-i-do__head {
+    margin-bottom: 36px;
+}
+
+/* Same pill label as the About section */
+.what-i-do__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.what-i-do__label::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+}
+
+.what-i-do__title {
+    max-width: 420px;
+    margin: 20px 0 0;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.03em;
+}
+
+.what-i-do__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Tinted cards, matching the small highlight cards inside the About surface */
+.what-i-do__card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    background: #f7f3ff;
+    border: 1px solid rgba(108, 75, 246, 0.1);
+    border-radius: 24px;
+    transition: transform var(--ease), box-shadow var(--ease);
+}
+
+.what-i-do__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(40, 28, 90, 0.09);
+}
+
+/* White icon chip — same feel as the hero's floating badges */
+.what-i-do__icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 22px;
+    background: var(--surface);
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(40, 28, 90, 0.1);
+}
+
+.what-i-do__icon img {
+    display: block;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.what-i-do__card-title {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.what-i-do__text {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+@media (max-width: 960px) {
+    .what-i-do {
+        padding: 8px 16px 48px;
+    }
+
+    .what-i-do__inner {
+        padding: 36px 28px;
+        border-radius: 32px;
+    }
+
+    .what-i-do__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .what-i-do__card {
+        padding: 24px;
+        border-radius: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .what-i-do__inner {
+        padding: 28px 20px;
+        border-radius: 26px;
+    }
+}
+
+
+/* ==========================================================================
+   23. Featured projects (home page)
+   A compact grid of project cards inside the same white surface
+   used by the About and What I Do sections.
+   ========================================================================== */
+.featured-projects {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 8px 32px 64px;
+    scroll-margin-top: 120px;
+}
+
+.featured-projects__inner {
+    position: relative;
+    /* anchors the desktop button to this card */
+    padding: 51px;
+    background: var(--surface);
+    border-radius: 40px;
+    box-shadow: 0 24px 60px rgba(40, 28, 90, 0.08);
+}
+
+.featured-projects__head {
+    margin-bottom: 36px;
+}
+
+/* Same pill label as the About and What I Do sections */
+.featured-projects__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.featured-projects__label::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+}
+
+.featured-projects__title {
+    max-width: 420px;
+    margin: 20px 0 0;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.03em;
+}
+
+.featured-projects__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* Button: top-right on desktop, under the cards on smaller screens */
+.featured-projects__more {
+    position: absolute;
+    top: 51px;
+    right: 51px;
+}
+
+/* Compact tinted cards, matching the What I Do cards */
+.featured-projects__card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: #f7f3ff;
+    border: 1px solid rgba(108, 75, 246, 0.1);
+    border-radius: 22px;
+    transition: transform var(--ease), box-shadow var(--ease);
+}
+
+.featured-projects__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(40, 28, 90, 0.09);
+}
+
+/* Cover image placeholder — swap the span for an <img> later */
+.featured-projects__cover {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 18px;
+    overflow: hidden;
+    background: var(--brand-soft);
+    border: 1px dashed rgba(108, 75, 246, 0.35);
+    border-radius: 16px;
+    color: var(--brand);
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.featured-projects__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Once a real image is inside, hide the dashed placeholder look */
+.featured-projects__cover:has(img) {
+    background: none;
+    border-color: transparent;
+}
+
+.featured-projects__name {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.featured-projects__text {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+    .featured-projects {
+        padding: 8px 16px 48px;
+    }
+
+    .featured-projects__inner {
+        padding: 36px 28px;
+        border-radius: 32px;
+    }
+
+    /* The button leaves the top-right corner and sits below the cards */
+    .featured-projects__more {
+        position: static;
+        display: flex;
+        width: fit-content;
+        margin: 24px auto 0;
+    }
+
+    .featured-projects__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .featured-projects__card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-projects__inner {
+        padding: 28px 20px;
+        border-radius: 26px;
+    }
+}
+
+
+/* ==========================================================================
+   24. Sticky stack (desktop)
+   Each white panel parks just under the sticky navbar, so the next
+   panel slides up over it while you scroll — a stacked-card effect.
+   The small differences in "top" leave a thin edge of each card
+   visible underneath the next one.
+   ========================================================================== */
+.about,
+.what-i-do,
+.featured-projects {
+    position: sticky;
+}
+
+.about {
+    top: 120px;
+}
+
+.what-i-do {
+    top: 136px;
+}
+
+.featured-projects {
+    top: 152px;
+}
+
+/* On phones and tablets the cards can be taller than the screen,
+   so the stacking effect would hide content — turn it off. */
+@media (max-width: 960px) {
+    .about,
+    .what-i-do,
+    .featured-projects {
+        position: static;
+    }
+}
+
+
+/* ==========================================================================
+   25. Scroll reveal (phones and tablets)
+   Each white panel fades up as it enters the screen. This replaces the
+   sticky stack on small screens, where the panels are too tall to stick.
+   The "js-ready" class is added by main.js, so if JavaScript fails the
+   panels simply stay visible.
+   ========================================================================== */
+@media (max-width: 960px) {
+    .js-ready .about__inner,
+    .js-ready .what-i-do__inner,
+    .js-ready .featured-projects__inner {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .js-ready .is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js-ready .about__inner,
+    .js-ready .what-i-do__inner,
+    .js-ready .featured-projects__inner {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+/* ==========================================================================
+   26. Professional experience (about page)
+   One white surface holding a stack of roles, each separated by a
+   hairline rule so the list reads as a timeline.
+   ========================================================================== */
+.experience {
+    padding: 36px;
+    background: var(--surface);
+    border-radius: 32px;
+    box-shadow: 0 18px 40px rgba(40, 28, 90, 0.06);
+}
+
+.experience__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 0;
+    border-top: 1px solid rgba(22, 21, 28, 0.08);
+}
+
+.experience__icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: var(--brand-soft);
+    border-radius: 14px;
+}
+
+.experience__icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.experience__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.experience__item:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.experience__item:last-child {
+    padding-bottom: 0;
+}
+
+.experience__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 16px;
+}
+
+.experience__role {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.experience__period {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.experience__company {
+    margin: 2px 0 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--brand);
+}
+
+.experience__text {
+    margin: 0;
+    max-width: 720px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+    .experience {
+        padding: 26px 22px;
+        border-radius: 26px;
+    }
+
+    .experience__period {
+        white-space: normal;
+    }
+}
+
+
+/* ==========================================================================
+   27. Skills marquee (about page)
+   Brand logos in a single row that rolls from right to left forever.
+   The list is repeated once in the HTML, so the track can slide by
+   exactly half its width and loop with no visible jump.
+   ========================================================================== */
+.skills-marquee {
+    overflow: hidden;
+    padding: 8px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.skills-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: skills-marquee 34s linear infinite;
+}
+
+.skills-marquee:hover .skills-marquee__track {
+    animation-play-state: paused;
+}
+
+.skills-marquee__list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0 8px;
+    list-style: none;
+}
+
+.skills-marquee__item {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 148px;
+    height: 92px;
+    padding: 16px;
+    background: var(--surface);
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(40, 28, 90, 0.06);
+}
+
+.skills-marquee__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes skills-marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-marquee__list {
+        gap: 12px;
+    }
+
+    .skills-marquee__item {
+        width: 120px;
+        height: 76px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-marquee {
+        overflow-x: auto;
+    }
+
+    .skills-marquee__track {
+        animation: none;
     }
 }
