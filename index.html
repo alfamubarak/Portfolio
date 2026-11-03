@@ -1,242 +1,314 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mubarak Portfolio</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mubarak Portfolio</title>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- ============================================================
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ============================================================
          HEADER / NAVIGATION
          One floating pill with three parts:
          brand (left) · page links (center) · "Get in Touch" (right)
          ============================================================ -->
-    <header class="site-header">
-      <nav class="navbar" aria-label="Main navigation">
-        <!-- Brand: logo + name -->
-        <a class="brand" href="index.html">
-          <img class="brand__logo" src="icons/code-icon.svg" alt="" />
-          <span class="brand__name">Mubarak</span>
-        </a>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <!-- Brand: logo + name -->
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="icons/code-icon.svg" alt="" />
+        <span class="brand__name">Mubarak</span>
+      </a>
 
-        <!-- Page links. The current page is marked with .is-active. -->
-        <ul class="menu" id="main-menu">
-          <li>
-            <a
-              class="menu__link is-active"
-              href="index.html"
-              aria-current="page"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a class="menu__link" href="about.html">About me</a>
-          </li>
-          <li>
-            <a class="menu__link" href="projects.html">Projects</a>
-          </li>
-          <li>
-            <!-- Replace "#" with academic-planner.html when that page exists -->
-            <a class="menu__link" href="academic-planner.html">Academic Planner</a>
-          </li>
-          <li>
-            <a class="menu__link" href="contact.html">Contact</a>
-          </li>
+      <!-- Page links. The current page is marked with .is-active. -->
+      <ul class="menu" id="main-menu">
+        <li>
+          <a class="menu__link is-active" href="index.html" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a class="menu__link" href="about.html">About me</a>
+        </li>
+        <li>
+          <a class="menu__link" href="projects.html">Projects</a>
+        </li>
+        <li>
+          <!-- Replace "#" with academic-planner.html when that page exists -->
+          <a class="menu__link" href="academic-planner.html">Academic Planner</a>
+        </li>
+        <li>
+          <a class="menu__link" href="contact.html">Contact</a>
+        </li>
 
-          <!-- Same button as below, shown only inside the mobile menu -->
-          <li class="menu__cta">
-            <a class="btn btn--primary" href="contact.html">Get in Touch</a>
-          </li>
-        </ul>
+        <!-- Same button as below, shown only inside the mobile menu -->
+        <li class="menu__cta">
+          <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+        </li>
+      </ul>
 
-        <!-- Primary action (desktop only) -->
-        <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+      <!-- Primary action (desktop only) -->
+      <a class="btn btn--primary" href="contact.html">Get in Touch</a>
 
-        <!-- Mobile menu toggle -->
-        <button
-          class="hamburger"
-          type="button"
-          aria-label="Open menu"
-          aria-controls="main-menu"
-          aria-expanded="false"
-        >
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-        </button>
-      </nav>
-    </header>
+      <!-- Mobile menu toggle -->
+      <button class="hamburger" type="button" aria-label="Open menu" aria-controls="main-menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </nav>
+  </header>
 
-    <!-- ============================================================
+  <!-- ============================================================
          HERO
          Left: headline, short intro and actions
          Right: portrait with floating badges and decorative details
          ============================================================ -->
-    <main>
-      <section class="hero">
-        <div class="hero__content">
-          <h1 class="hero__title">
-            Make <span class="hero__title-accent">Designing</span>
-            Experiences. Building the Future.
-          </h1>
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Make <span class="hero__title-accent">Designing</span>
+          Experiences. Building the Future.
+        </h1>
 
-          <p class="hero__text">
-            Hi, I'm Mohammad Mubarak, a Software Engineering student at Miva
-            Open University and a UI/UX Designer passionate about creating
-            intuitive, accessible, and user-centered digital experiences.
-          </p>
+        <p class="hero__text">
+          I'm a UI/UX Designer and Software Engineering student at Miva Open University, experienced in designing
+          digital products, solving usability challenges, and mentoring designers. I'm also developing my programming
+          skills in Python, PHP, JavaScript, React, and Next.js to bring creative ideas to life through code.
+        </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#">Explore My Projects</a>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="projects.html">Explore My Projects</a>
 
-            <a class="hero__works" href="#about">
-              More About Me
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M7 17 17 7M9 7h8v8"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-            </a>
-          </div>
+          <a class="hero__works" href="#about">
+            More About Me
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Portrait and decorations -->
+      <div class="hero__visual">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="hero__ring" aria-hidden="true"></div>
+
+        <div class="hero__dots hero__dots--top" aria-hidden="true"></div>
+        <div class="hero__dots hero__dots--bottom" aria-hidden="true"></div>
+
+        <div class="hero__portrait">
+          <img src="images/Mubarak.png" alt="Portrait of Mubarak" />
         </div>
 
-        <!-- Portrait and decorations -->
-        <div class="hero__visual">
-          <div class="hero__glow" aria-hidden="true"></div>
-          <div class="hero__ring" aria-hidden="true"></div>
-
-          <div class="hero__dots hero__dots--top" aria-hidden="true"></div>
-          <div class="hero__dots hero__dots--bottom" aria-hidden="true"></div>
-
-          <div class="hero__portrait">
-            <img src="images/Mubarak.png" alt="Portrait of Mubarak" />
-          </div>
-
-          <div class="floating-badge floating-badge--code" aria-hidden="true">
-            <img src="icons/code-icon.svg" alt="" width="30" height="25" />
-          </div>
-
-          <div class="floating-badge floating-badge--study" aria-hidden="true">
-            <img
-              src="icons/graduation-cap-icon.svg"
-              alt=""
-              width="30"
-              height="18"
-            />
-          </div>
+        <div class="floating-badge floating-badge--code" aria-hidden="true">
+          <img src="icons/code-icon.svg" alt="" width="30" height="25" />
         </div>
-      </section>
 
-      <!-- ============================================================
+        <div class="floating-badge floating-badge--study" aria-hidden="true">
+          <img src="icons/graduation-cap-icon.svg" alt="" width="30" height="18" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
            ABOUT ME (brief)
            Left: section label + heading
            Right: short intro, quick facts and a link to the full page
            ============================================================ -->
-      <section class="about" id="about">
-        <div class="about__inner">
-          <div class="about__intro">
-            <p class="about__label">About me</p>
-            <h2 class="about__title">A Little About Me</h2>
-          </div>
-
-          <div class="about__body">
-            <p class="about__text">
-              I'm a Software Engineering student at Miva Open University and a
-              UI/UX Designer with experience working on digital products,
-              including healthcare websites, mobile apps, and dashboards. Using
-              Figma, wireframes, user flows, and prototypes, I design intuitive,
-              responsive interfaces that address user needs. I'm also developing
-              my front-end skills to bridge the gap between design and
-              development.
-            </p>
-            
-
-            
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- ============================================================
-         FOOTER
-         ============================================================ -->
-    <footer class="site-footer">
-      <div class="footer__inner">
-        <div class="footer__top">
-          <a class="footer__brand" href="index.html">
-            <img class="footer__logo" src="icons/code-icon.svg" alt="" />
-            <span class="footer__brand-text">
-              <span class="footer__name">Mubarak</span>
-              <span class="footer__tagline"
-                >Designing with purpose. Learning through practice.</span
-              >
-            </span>
-          </a>
-
-          <div class="footer__socials">
-            <a
-              class="footer__social"
-              href="https://www.linkedin.com/in/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn (opens in a new tab)"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8.5h4.46V24H.5V8.5Zm7.5 0h4.27v2.11h.06c.6-1.13 2.06-2.32 4.24-2.32 4.54 0 5.38 2.99 5.38 6.88V24h-4.46v-7.5c0-1.79-.03-4.1-2.5-4.1-2.5 0-2.88 1.95-2.88 3.97V24H8V8.5Z"
-                ></path>
-              </svg>
-            </a>
-
-            <a
-              class="footer__social"
-              href="https://github.com/your-username"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub (opens in a new tab)"
-            >
-              <span class="github-icon" aria-hidden="true"></span>
-            </a>
-          </div>
+    <section class="about" id="about">
+      <div class="about__inner">
+        <div class="about__intro">
+          <p class="about__label">Beyond the Interface</p>
+          <h2 class="about__title">A Little About Me</h2>
         </div>
 
-        <div class="footer__bottom">
-          <nav class="footer__nav" aria-label="Footer navigation">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="academic-planner.html">Academic Planner</a>
-            <a href="contact.html">Contact</a>
-          </nav>
-          <p class="footer__copy">
-            © 2026 Mohammad Mubarak. All rights reserved.
+        <div class="about__body">
+          <p class="about__text">
+            I believe great digital products are more than attractive screens. They should solve meaningful problems,
+            simplify complex processes, and make technology easier for people to use.
+
+            My experience working on dashboards, web applications, and mobile products has taught me to approach design
+            with creativity, structure, and purpose.
+
+            Today, I'm combining my product design experience with Software Engineering studies, developing my
+            understanding of programming, frontend frameworks, and the technologies behind modern applications.
           </p>
+
         </div>
       </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="js/main.js"></script>
-  </body>
+    <!-- ============================================================
+         WHAT I DO
+         Three cards: each one is a white rounded surface with an
+         icon chip, a title and a short description.
+         ============================================================ -->
+    <section class="what-i-do" id="what-i-do">
+      <div class="what-i-do__inner">
+        <div class="what-i-do__head">
+          <p class="what-i-do__label">What I Do</p>
+          <h2 class="what-i-do__title">How I Can Help</h2>
+        </div>
+
+        <div class="what-i-do__grid">
+          <article class="what-i-do__card">
+            <span class="what-i-do__icon">
+              <img src="icons/design-icon.svg" alt="" />
+            </span>
+            <h3 class="what-i-do__card-title">Product &amp; UI/UX Design</h3>
+            <p class="what-i-do__text">
+              I transform complex ideas and requirements into structured user flows,
+              wireframes, interactive prototypes, and intuitive interfaces for web and
+              mobile applications.
+            </p>
+          </article>
+
+          <article class="what-i-do__card">
+            <span class="what-i-do__icon">
+              <img src="icons/code-icon.svg" alt="" />
+            </span>
+            <h3 class="what-i-do__card-title">Web Development</h3>
+            <p class="what-i-do__text">
+              I'm developing my skills in HTML, CSS, JavaScript, React, and Next.js,
+              alongside programming knowledge in Python and PHP, to understand how
+              modern web applications are built.
+            </p>
+          </article>
+
+          <article class="what-i-do__card">
+            <span class="what-i-do__icon">
+              <img src="icons/graduation-cap-icon.svg" alt="" />
+            </span>
+            <h3 class="what-i-do__card-title">Design Mentorship</h3>
+            <p class="what-i-do__text">
+              I support aspiring designers in understanding design principles, Figma,
+              design systems, and the practical thinking required to create meaningful
+              user experiences.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURED PROJECTS
+         A compact grid of three project cards inside one white surface.
+         ============================================================ -->
+    <section class="featured-projects" id="featured-projects">
+      <div class="featured-projects__inner">
+        <div class="featured-projects__head">
+          <p class="featured-projects__label">Portfolio</p>
+          <h2 class="featured-projects__title">Featured Projects</h2>
+        </div>
+
+        <div class="featured-projects__grid">
+          <article class="featured-projects__card">
+            <div class="featured-projects__cover">
+              <!-- Replace this span with your cover image:
+                   <img src="images/your-project-cover.png" alt="Project cover" /> -->
+              <span>Cover image</span>
+            </div>
+            <h3 class="featured-projects__name">Field Pro</h3>
+            <p class="featured-projects__text">
+              A mobile application interface focused on creating a clear, organised
+              user experience for field-related activities and workflows.
+            </p>
+          </article>
+
+          <article class="featured-projects__card">
+            <div class="featured-projects__cover">
+              <!-- Replace this span with your cover image:
+                   <img src="images/your-project-cover.png" alt="Project cover" /> -->
+              <span>Cover image</span>
+            </div>
+            <h3 class="featured-projects__name">QuoteFlow</h3>
+            <p class="featured-projects__text">
+              A finance-focused platform designed to simplify quotation creation and
+              management through AI-assisted workflows, helping teams organise
+              quotation requests and prepare professional documents.
+            </p>
+          </article>
+
+          <article class="featured-projects__card">
+            <div class="featured-projects__cover">
+              <!-- Replace this span with your cover image:
+                   <img src="images/your-project-cover.png" alt="Project cover" /> -->
+              <span>Cover image</span>
+            </div>
+            <h3 class="featured-projects__name">VRM</h3>
+            <p class="featured-projects__text">
+              A digital management system designed to streamline election-related
+              registration, distribution activities, and administrative operations
+              through a mobile application and centralised dashboard.
+            </p>
+          </article>
+        </div>
+
+        <a class="btn btn--primary featured-projects__more" href="projects.html">View More Projects</a>
+      </div>
+
+      
+    </section>
+  </main>
+
+  <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <a class="footer__brand" href="index.html">
+          <img class="footer__logo" src="icons/code-icon.svg" alt="" />
+          <span class="footer__brand-text">
+            <span class="footer__name">Mubarak</span>
+            <span class="footer__tagline">Designing with purpose. Learning through practice.</span>
+          </span>
+        </a>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="https://www.linkedin.com/in/your-username" target="_blank"
+            rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8.5h4.46V24H.5V8.5Zm7.5 0h4.27v2.11h.06c.6-1.13 2.06-2.32 4.24-2.32 4.54 0 5.38 2.99 5.38 6.88V24h-4.46v-7.5c0-1.79-.03-4.1-2.5-4.1-2.5 0-2.88 1.95-2.88 3.97V24H8V8.5Z">
+              </path>
+            </svg>
+          </a>
+
+          <a class="footer__social" href="https://github.com/your-username" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub (opens in a new tab)">
+            <span class="github-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="academic-planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer__copy">
+          © 2026 Mohammad Mubarak. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
 </html>
