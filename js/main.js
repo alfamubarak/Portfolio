@@ -35,24 +35,41 @@ if (panels.length > 0 && 'IntersectionObserver' in window) {
 }
 
 
-// ---- STICKY CARDS (about page) ----
+// ---- STICKY CARDS ----
 
-// A card only sticks while it fits under the navbar. A card taller than
-// the screen would hide its own bottom edge, so it stays in normal flow.
-let stickyCards = document.querySelectorAll('.about-sticky');
+// Home panels and the two about-page cards.
+// A card only sticks on small screens while it fits under the navbar.
+// A card taller than the screen would hide its own bottom edge.
+let stickyCards = document.querySelectorAll(
+    '.about, .what-i-do, .featured-projects, .about-sticky'
+);
 
 if (stickyCards.length > 0) {
     let updateStickyCards = () => {
-        // Keep these numbers in sync with the "top" values in style.css.
-        let limit = window.innerWidth <= 960 ? 104 : 136;
-        let room = window.innerHeight - limit - 16;
+        let narrow = window.innerWidth <= 960;
 
         stickyCards.forEach((card) => {
-            card.classList.toggle('is-pinned', card.offsetHeight <= room);
+            if (narrow) {
+                // Phone/tablet: keep the card's bottom edge on screen.
+                // Tall cards scroll by first, then park with a negative top.
+                let top = Math.min(96, window.innerHeight - card.offsetHeight - 16);
+                card.style.setProperty('--sticky-top', top + 'px');
+                card.classList.add('is-pinned');
+            } else {
+                // Desktop: only pin a card if it fits under the navbar.
+                // A card taller than the screen would hide its own bottom.
+                let room = window.innerHeight - 152 - 16;
+                card.style.removeProperty('--sticky-top');
+                card.classList.toggle('is-pinned', card.offsetHeight <= room);
+            }
         });
     };
 
     updateStickyCards();
     window.addEventListener('load', updateStickyCards);
     window.addEventListener('resize', updateStickyCards);
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(updateStickyCards);
+    }
 }

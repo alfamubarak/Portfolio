@@ -32,7 +32,7 @@
     /* Shape and motion */
     --radius-pill: 999px;
     --shadow-nav: 0 12px 32px rgba(22, 21, 28, 0.08);
-    --shadow-button: 0 10px 22px rgba(108, 75, 246, 0.28);
+    --shadow-button: 0 8px 18px rgba(22, 21, 28, 0.16);
     --ease: 180ms ease;
 }
 
@@ -2135,31 +2135,38 @@ textarea.field__input {
    The small differences in "top" leave a thin edge of each card
    visible underneath the next one.
    ========================================================================== */
-.about,
-.what-i-do,
-.featured-projects {
-    position: sticky;
-}
+@media (min-width: 961px) {
 
-.about {
-    top: 120px;
-}
-
-.what-i-do {
-    top: 136px;
-}
-
-.featured-projects {
-    top: 152px;
-}
-
-/* On phones and tablets the cards can be taller than the screen,
-   so the stacking effect would hide content — turn it off. */
-@media (max-width: 960px) {
     .about,
     .what-i-do,
     .featured-projects {
-        position: static;
+        position: sticky;
+    }
+
+    .about {
+        top: 120px;
+    }
+
+    .what-i-do {
+        top: 136px;
+    }
+
+    .featured-projects {
+        top: 152px;
+    }
+}
+
+/* On phones and tablets the panels are often taller than the screen.
+   There main.js pins each one with a "top" that keeps its bottom edge
+   on screen (a negative top for tall panels), so the panel scrolls
+   normally first and then parks while the next one slides over it. */
+@media (max-width: 960px) {
+    .about.is-pinned,
+    .what-i-do.is-pinned,
+    .featured-projects.is-pinned,
+    .about-sticky.is-pinned {
+        position: sticky;
+        top: var(--sticky-top, 96px);
     }
 }
 
@@ -2401,5 +2408,223 @@ textarea.field__input {
 
     .about-sticky--second.is-pinned {
         top: 104px;
+    }
+}
+
+
+/* ==========================================================================
+   29. Project detail pages
+   Hero, cover image, meta strip, write-up blocks, image gallery and a
+   "next project" panel. Built from the same tokens as the rest of the site.
+   ========================================================================== */
+/* Cover — swap the span for an <img> when you have the artwork */
+.project-cover {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--brand-soft);
+    border: 1px dashed rgba(108, 75, 246, 0.35);
+    border-radius: 32px;
+    color: var(--brand);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-cover:has(img) {
+    background: none;
+    border-color: transparent;
+}
+
+/* Meta strip: role, platform, tools, year */
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    padding: 28px 36px;
+    background: var(--surface);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(40, 28, 90, 0.06);
+}
+
+.project-meta__label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--brand);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-meta__value {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* Write-up */
+.project-detail {
+    padding: 44px 48px;
+    background: var(--surface);
+    border-radius: 40px;
+    box-shadow: 0 24px 60px rgba(40, 28, 90, 0.08);
+}
+
+.project-block + .project-block {
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(22, 21, 28, 0.08);
+}
+
+.project-block {
+    --project-gap: 40px;
+}
+
+.project-block__head {
+    display: flex;
+    align-items: center;
+    gap: var(--project-gap);
+    margin-bottom: 14px;
+}
+
+.project-block__icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--brand-soft);
+    border-radius: 12px;
+}
+
+.project-block__icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.project-block h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.project-block p {
+    /* line up with the heading, past the icon chip */
+    margin: 0;
+    padding-left: calc(40px + var(--project-gap));
+    max-width: 760px;
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .project-block {
+        --project-gap: 20px;
+    }
+}
+
+/* Image gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.project-gallery__item {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--brand-soft);
+    border: 1px dashed rgba(108, 75, 246, 0.35);
+    border-radius: 22px;
+    color: var(--brand);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-gallery__item:has(img) {
+    background: none;
+    border-color: transparent;
+}
+
+/* Next project */
+.project-next {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 72px;
+    padding: 44px 48px;
+    background: var(--text);
+    color: #ffffff;
+    border-radius: 40px;
+}
+
+.project-next__label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-next__title {
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 960px) {
+    .project-cover {
+        aspect-ratio: 4 / 3;
+        border-radius: 26px;
+    }
+
+    .project-meta {
+        padding: 24px 28px;
+        border-radius: 24px;
+    }
+
+    .project-detail {
+        padding: 32px 28px;
+        border-radius: 32px;
+    }
+
+    .project-next {
+        margin-top: 56px;
+        padding: 32px 28px;
+        border-radius: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-detail {
+        padding: 26px 22px;
+        border-radius: 26px;
+    }
+
+    .project-next {
+        padding: 28px 22px;
     }
 }
