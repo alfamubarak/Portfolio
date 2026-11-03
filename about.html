@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+         HEADER / NAVIGATION
+         ============================================================ -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <!-- Brand: logo + name -->
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="icons/code-icon.svg" alt="" />
+        <span class="brand__name">Mubarak</span>
+      </a>
+
+      <!-- Page links. The current page is marked with .is-active. -->
+      <ul class="menu" id="main-menu">
+        <li>
+          <a class="menu__link" href="index.html">Home</a>
+        </li>
+        <li>
+          <a class="menu__link is-active" href="about.html" aria-current="page">About me</a>
+        </li>
+        <li>
+          <a class="menu__link" href="projects.html">Projects</a>
+        </li>
+        <li>
+          <a class="menu__link" href="academic-planner.html">Academic Planner</a>
+        </li>
+        <li>
+          <a class="menu__link" href="contact.html">Contact</a>
+        </li>
+
+        <!-- Same button as below, shown only inside the mobile menu -->
+        <li class="menu__cta">
+          <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+        </li>
+      </ul>
+
+      <!-- Primary action (desktop only) -->
+      <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+
+      <!-- Mobile menu toggle -->
+      <button class="hamburger" type="button" aria-label="Open menu" aria-controls="main-menu" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+         ABOUT PAGE
+         Hero introduction followed by the full story and a CTA.
+         ============================================================ -->
+  <main>
+    <div class="about-page">
+      <!-- ---------- HERO ---------- -->
+      <section class="about-hero">
+        <p class="about-hero__eyebrow">About Me</p>
+        <h1 class="about-hero__title">A Little About Me</h1>
+      </section>
+
+      <!-- ---------- STORY ---------- -->
+      <section class="about-section">
+        <div class="about__inner">
+          <div class="about__intro">
+            <p class="about__label">My Story</p>
+            <h2 class="about__title">My Journey So Far</h2>
+          </div>
+
+          <div class="about__body">
+            <p class="about__text">
+              My journey into technology hasn't followed a straight path. I
+              originally studied Civil Engineering at Kaduna Polytechnic, but my
+              growing interest in digital products led me to explore UI/UX
+              design.
+            </p>
+            <p class="about__text">
+              What started as an interest in how websites and applications look
+              gradually developed into a deeper curiosity about how they work,
+              how people interact with them, and how thoughtful design can solve
+              everyday problems.
+            </p>
+            <p class="about__text">
+              Over time, I've had the opportunity to work on real-world digital
+              products, collaborate with teams, and mentor aspiring UI/UX
+              designers.
+            </p>
+            <p class="about__text">
+              Today, I work across product design while studying Software
+              Engineering to strengthen my understanding of programming and
+              modern web technologies, including Python, PHP, JavaScript, React,
+              and Next.js.
+            </p>
+            <p class="about__text">
+              I'm continuously learning, experimenting, and improving. My
+              long-term goal is to become a versatile product professional who
+              can contribute meaningfully to both the design and development of
+              digital solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- EDUCATION ---------- -->
+      <section class="about-section">
+        <div class="about-section__head">
+          <h2 class="about-section__title">Educational Background</h2>
+        </div>
+
+        <ul class="info-cards">
+          <li class="info-card">
+            <span class="info-card__label">2026 – Present</span>
+            <h3 class="info-card__title">Miva Open University</h3>
+            <p class="info-card__text">B.Sc. Software Engineering (In Progress)</p>
+          </li>
+
+          <li class="info-card">
+            <span class="info-card__label">2022 – 2024</span>
+            <h3 class="info-card__title">Kaduna Polytechnic</h3>
+            <p class="info-card__text">HND Civil Engineering</p>
+          </li>
+
+          <li class="info-card">
+            <span class="info-card__label">2019 – 2021</span>
+            <h3 class="info-card__title">Kaduna Polytechnic</h3>
+            <p class="info-card__text">ND Civil Engineering</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ---------- EXPERIENCE ---------- -->
+      <section class="about-section">
+        <div class="about-section__head">
+          <h2 class="about-section__title">Professional Experience</h2>
+        </div>
+
+        <div class="experience">
+          <article class="experience__item">
+            <span class="experience__icon">
+              <img src="icons/briefcase-icon.svg" alt="" />
+            </span>
+            <div class="experience__body">
+              <div class="experience__top">
+                <h3 class="experience__role">Lead UI/UX Designer</h3>
+                <p class="experience__period">July 2026 – Present</p>
+              </div>
+              <p class="experience__company">Neumosoft</p>
+              <p class="experience__text">
+                Contributing to digital product design, user experience
+                improvements, interface systems, and collaboration throughout the
+                design process.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience__item">
+            <span class="experience__icon">
+              <img src="icons/briefcase-icon.svg" alt="" />
+            </span>
+            <div class="experience__body">
+              <div class="experience__top">
+                <h3 class="experience__role">Junior Partner</h3>
+                <p class="experience__period">August 2026 – Present</p>
+              </div>
+              <p class="experience__company">IT Central</p>
+              <p class="experience__text">
+                Supporting client projects, design decisions, and the professional
+                development of junior designers.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience__item">
+            <span class="experience__icon">
+              <img src="icons/briefcase-icon.svg" alt="" />
+            </span>
+            <div class="experience__body">
+              <div class="experience__top">
+                <h3 class="experience__role">Project Associate</h3>
+                <p class="experience__period">January – August 2026</p>
+              </div>
+              <p class="experience__company">IT Central</p>
+              <p class="experience__text">
+                Worked on product interfaces, project requirements, and structured
+                design solutions for digital applications.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience__item">
+            <span class="experience__icon">
+              <img src="icons/briefcase-icon.svg" alt="" />
+            </span>
+            <div class="experience__body">
+              <div class="experience__top">
+                <h3 class="experience__role">UI/UX Design Intern</h3>
+                <p class="experience__period">May – November 2025</p>
+              </div>
+              <p class="experience__company">IT Central</p>
+              <p class="experience__text">
+                Developed practical design skills through interface design
+                assignments, prototyping, and collaborative projects.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience__item">
+            <span class="experience__icon">
+              <img src="icons/briefcase-icon.svg" alt="" />
+            </span>
+            <div class="experience__body">
+              <div class="experience__top">
+                <h3 class="experience__role">UI/UX Design Intern</h3>
+                <p class="experience__period">January – June 2022</p>
+              </div>
+              <p class="experience__company">Rivasult Agency</p>
+              <p class="experience__text">
+                Gained early professional exposure to interface design, design
+                workflows, and creative problem-solving.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ---------- SKILLS ---------- -->
+      <section class="about-section">
+        <div class="about-section__head">
+          <h2 class="about-section__title">Skills &amp; Technologies</h2>
+        </div>
+
+        <div class="skills-marquee">
+          <div class="skills-marquee__track">
+            <ul class="skills-marquee__list">
+              <li class="skills-marquee__item"><img src="icons/skills/figma.svg" alt="Figma" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/canva.svg" alt="Canva" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/vscode.svg" alt="Visual Studio Code" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/git.svg" alt="Git" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/github.svg" alt="GitHub" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/wordpress.svg" alt="WordPress" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/elementor.svg" alt="Elementor" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/woocommerce.svg" alt="WooCommerce" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/blogger.svg" alt="Blogger" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/python.svg" alt="Python" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/php.svg" alt="PHP" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/javascript.svg" alt="JavaScript" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/html5.svg" alt="HTML5" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/css3.svg" alt="CSS3" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/react.svg" alt="React" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/nextjs.svg" alt="Next.js" /></li>
+            </ul>
+
+            <!-- Duplicate of the list above, so the loop has no visible gap -->
+            <ul class="skills-marquee__list" aria-hidden="true">
+              <li class="skills-marquee__item"><img src="icons/skills/figma.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/canva.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/vscode.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/git.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/github.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/wordpress.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/elementor.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/woocommerce.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/blogger.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/python.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/php.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/javascript.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/html5.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/css3.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/react.svg" alt="" /></li>
+              <li class="skills-marquee__item"><img src="icons/skills/nextjs.svg" alt="" /></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- GOALS ---------- -->
+      <section class="about-section">
+        <div class="about__inner about-goals">
+          <div class="about__intro">
+            <p class="about__label">Looking Ahead</p>
+            <h2 class="about__title">Where I'm Heading</h2>
+          </div>
+
+          <div class="about__body">
+            <p class="about__text">
+              My goal is to grow into a versatile digital product professional
+              with strong expertise in UI/UX design and software engineering.
+            </p>
+            <p class="about__text">
+              I'm particularly interested in building products that solve
+              practical challenges in education, finance, and everyday business
+              operations.
+            </p>
+            <p class="about__text">
+              As I continue my studies, I'm strengthening my programming skills in
+              Python, PHP, and JavaScript while exploring frontend development
+              with React and Next.js.
+            </p>
+            <p class="about__text">
+              I want to contribute to meaningful software projects and develop a
+              deeper understanding of the complete product development lifecycle,
+              from identifying problems and designing solutions to building and
+              improving functional applications.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- CALL TO ACTION ---------- -->
+      <section class="about-cta">
+        <div>
+          <h2 class="about-cta__title">Let's build something together.</h2>
+          <p class="about-cta__text">
+            Whether it's a product idea, a design challenge, or a conversation
+            about design and development, I'd love to hear from you.
+          </p>
+        </div>
+
+        <div class="about-cta__actions">
+          <a class="btn btn--primary" href="contact.html">Get in Touch</a>
+          <a class="btn btn--outline" href="projects.html">View My Projects</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <a class="footer__brand" href="index.html">
+          <img class="footer__logo" src="icons/code-icon.svg" alt="" />
+          <span class="footer__brand-text">
+            <span class="footer__name">Mubarak</span>
+            <span class="footer__tagline">Designing with purpose. Learning through practice.</span>
+          </span>
+        </a>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="https://www.linkedin.com/in/your-username" target="_blank"
+            rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8.5h4.46V24H.5V8.5Zm7.5 0h4.27v2.11h.06c.6-1.13 2.06-2.32 4.24-2.32 4.54 0 5.38 2.99 5.38 6.88V24h-4.46v-7.5c0-1.79-.03-4.1-2.5-4.1-2.5 0-2.88 1.95-2.88 3.97V24H8V8.5Z">
+              </path>
+            </svg>
+          </a>
+
+          <a class="footer__social" href="https://github.com/your-username" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub (opens in a new tab)">
+            <span class="github-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="academic-planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer__copy">
+          © 2026 Mohammad Mubarak. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
