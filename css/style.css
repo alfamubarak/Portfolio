@@ -2628,3 +2628,30 @@ textarea.field__input {
         padding: 28px 22px;
     }
 }
+
+
+/* ==========================================================================
+   30. Mobile reading size
+   Phones and tablets render all body copy at 16px (1rem) so no paragraph
+   is smaller than the comfortable reading size. Headings keep their
+   responsive sizes and small UI labels stay compact.
+   ========================================================================== */
+@media (max-width: 960px) {
+
+    .hero__text,
+    .about__text,
+    .what-i-do__text,
+    .featured-projects__text,
+    .about-hero__text,
+    .about-section__intro,
+    .info-card__text,
+    .experience__text,
+    .about-cta__text,
+    .contact__aside-text,
+    .project-block p,
+    .task__text,
+    .task-empty,
+    .modal__text {
+        font-size: 1rem;
+    }
+}
