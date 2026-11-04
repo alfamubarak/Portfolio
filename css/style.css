@@ -2086,10 +2086,27 @@ textarea.field__input {
 }
 
 .featured-projects__text {
-    margin: 0;
+    margin: 0 0 20px;
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.7;
+}
+
+/* Read-more arrow, pushed to the bottom of every card.
+   Inline SVG, so it inherits this colour and can shift on hover. */
+.featured-projects__arrow {
+    display: block;
+    align-self: flex-end;
+    width: 44px;
+    height: 44px;
+    margin: auto 0 0 auto;
+    color: var(--brand);
+    transition: color var(--ease), transform var(--ease);
+}
+
+.featured-projects__card:hover .featured-projects__arrow {
+    color: var(--brand-strong);
+    transform: translateX(4px) scale(1.05);
 }
 
 @media (max-width: 960px) {
