@@ -1689,6 +1689,22 @@ textarea.field__input {
     box-shadow: 0 24px 50px rgba(40, 28, 90, 0.1);
 }
 
+.info-card__icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
+    background: var(--brand-soft);
+    border-radius: 12px;
+}
+
+.info-card__icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
 .info-card__label {
     display: inline-block;
     margin: 0 0 12px;
